@@ -1,0 +1,13 @@
+.image {
+    /*content: url('/assets/aws.png');
+    border-radius: 50%;*/
+    width: 500px;
+    filter: drop-shadow(-.4rem .4rem 20px rgb(250, 241, 229));
+    
+}
+.btn-container {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}

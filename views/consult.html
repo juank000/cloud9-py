@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Consult Page</title>
+        <link rel="stylesheet" href="../static/css/base.css" type="text/css" />
+        <link rel="stylesheet" href="../static/css/consult.css" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="../assets/cloud.png">
+    </head>
+    <body>
+        <h1 class="title">Consult user</h1>
+        <section class="form-section">
+            <div class="form-div">
+                <label class="form-label">Id number:</label>
+                <input class="form-input" id="id_num" type="number" placeholder="Only numbers allowed" name="num_id"/>
+            </div>
+            <div class="image-container">
+                <img class="image" src="../assets/aws3.png" alt="aws image" loading="lazy">
+            </div>
+            <span class="msg" id="mssg"></span>
+            <div class="form-div">
+                <textarea class="form-output" id=txt-output readonly placeholder="User info" rows="4"></textarea>
+            </div>
+            <div class="form-btn">
+                <button class="btn" id="btn-consult" type="submit" onClick=consultUser()>Consult</button>
+                <button class="btn" type="submit" onClick=clearInfo()>Clear</button>
+            </div>
+        </section>
+        <script type="text/javascript" src="../static/js/consult.js"></script>
+    </body>
+    <footer class="footer-container">
+        <img class="footer-image" src="../assets/aws4.png" alt="aws footer">
+    </footer>
+</html>

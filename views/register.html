@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Register Page</title>
+        <link rel="stylesheet" href="../static/css/base.css" type="text/css" />
+        <link rel="stylesheet" href="../static/css/register.css" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="../assets/cloud.png">
+    </head>
+    <body>
+        <h1 class="title">Register user</h1>
+        <section class="form-section">
+            <div class="image-container">
+                <img class="image" src="../assets/aws2.png" alt="aws image" loading="lazy">
+            </div>
+            <form class="form-container" action='/register_user' method='post'>
+                <div class="form-div">
+                    <label class="form-label">Id</label>
+                    <input class="form-input" type="number" placeholder="Only numbers allowed" name="id"/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label">Name</label>
+                    <input class="form-input" type="text" placeholder="Enter your name" name="name"/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label">Last Name</label>
+                    <input class="form-input" type="text" placeholder="Enter your laste name" name="last_name"/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label">Birth date</label>
+                    <input class="form-input" type='date' name="date"/>
+                </div>
+                <div class="form-btn">
+                    <button class="btn" type="submit" onClick=registerUser()>Register</button>
+                </div>
+            </form>
+        </section>
+
+        <script type="text/javascript" src="../static/js/register.js"></script>
+    </body>
+    <footer class="footer-container">
+        <img class="footer-image" src="../assets/aws4.png" alt="aws footer">
+    </footer>
+</html>
