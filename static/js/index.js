@@ -1,5 +1,3 @@
-const registerPage = () => {
-    window.location = '/register_page'
-}
+const registerPage = () => {window.location = '/register_page'}
 
-const consultPage = _ => {alert('Testing on AWS Consult Button')}
+const consultPage = _ => {window.location = '/consult_page'}

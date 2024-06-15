@@ -3,6 +3,8 @@
 
 from flask import Flask, render_template, request
 #print(dir(Flask))
+from database.db import connectionSQL
+#from database.db import *
 
 #app = Flask(__name__, template_folder = '') # default folder tempalte
 app = Flask(__name__, template_folder = 'views')
@@ -10,6 +12,7 @@ app = Flask(__name__, template_folder = 'views')
 @app.route('/')
 def home():
     #print("Everything's OK")
+    connectionSQL()
     #return render_template('hello.html')
     return render_template('index.html')
     
@@ -26,6 +29,11 @@ def registerUser():
     print(f"\nId: {id}\nName: {name}\nLast name: {last_name}\nDate: {date}\n")
     #print('\n' + id + ' | ' + name + ' | ' + last_name + ' | ' + date + '\n')
     return render_template('register.html')
+    
+@app.route('/consult_page')
+def consultPage():
+    return render_template('consult.html')
+    
   
 if(__name__ == '__main__'):
     #print('hello backend')
