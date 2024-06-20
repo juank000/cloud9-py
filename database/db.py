@@ -60,13 +60,16 @@ def add_user(iid, fname, lname, bdate):
 def consultUserDB(iid):
     sql_query = f"SELECT * FROM {DB_TABLE} WHERE id = {iid}"
     conn = connectionSQL()
+    
     try:
         if conn != None:
             cur = conn.cursor()
             cur.execute(sql_query)
             res = cur.fetchall()
-            print('\n' + res + '\n')
-            #return res
+            print("\nres:")
+            print(res)
+            print("db.py\n")
+            return res
         else:
             print('error')
             return False

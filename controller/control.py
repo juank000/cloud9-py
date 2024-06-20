@@ -37,15 +37,19 @@ def fconsultUser():
     id = userObj["id"]
     print('\n' + id + '\n')
     res = consultUserDB(id)
-    msg = ''
+    print("res:")
+    print(res)
+    print("control.py\n")
     
     if res != False and len(res) != 0:
-        msg = {
+        answ = {
             'status': 'OK...',
             'name': res[0][1]
         }
+        print(f"\nName obtained from the db: {answ['name']}\n")
     else:
-        res = {
-            'status': 'ERROR'
+        answ = {
+            'status': 'ERROR...'
         }
-    return res
+        print("User not found")
+    return answ

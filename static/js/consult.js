@@ -33,7 +33,8 @@ const consultUser = _ => {
     })
     .then(res => res.json())
     .then(data => {
-        alert(data.status)
+        //alert(data.status) // status variable in control.py
+        alert("Name fetched from the db: " + data.name) // name variable in control.py
     })
-    .catch(err => alert(err))
+    .catch(err => alert("User not found" + err))
 }
