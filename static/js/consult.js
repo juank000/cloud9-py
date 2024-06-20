@@ -6,7 +6,7 @@ function clearInfo() {
     window.location.reload()
 }
 
-const consultUser = _ => {
+const consultUser_ALT = _ => {
     const idInput = document.getElementById('id_num').value
     //console.log(idInput)
     idInput === "" ? [img.style.display = 'none',
@@ -17,4 +17,23 @@ const consultUser = _ => {
     
     /*const consultBtn = document.getElementById('btn-consult')
     idInput != "" ? consultBtn.disabled = true : consultBtn.disabled = false*/
+}
+
+const consultUser = _ => {
+    const idInput = document.getElementById('id_num').value
+    const userObj = {"id":idInput}
+    
+    fetch('/consult_user', {
+        'method':'post', // Do not use GET with sensitive data
+        'headers':
+        {
+            'Content-Type': 'application/json'
+        },
+        'body': JSON.stringify(userObj)
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.status)
+    })
+    .catch(err => alert(err))
 }

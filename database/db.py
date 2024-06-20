@@ -1,4 +1,9 @@
 # pip instal pymsql or pip install mariadb
+# sudo pip instal pymsql or sudo pip install mariadb
+# pip install dotenv
+# pip install os (Not required)
+# sudo pip install dotenv
+# sudo pip install os-sys (Not required)
 
 # Module Imports
 import os
@@ -43,7 +48,28 @@ def add_user(iid, fname, lname, bdate):
             conn.commit()
             conn.close()
             print(cur.rowcount, "record inserted.")
+            return True
         else:
             print("Error connecting to db...")
+            return False
    except Exception as e: 
         print(e)
+        return False
+
+
+def consultUserDB(iid):
+    sql_query = f"SELECT * FROM {DB_TABLE} WHERE id = {iid}"
+    conn = connectionSQL()
+    try:
+        if conn != None:
+            cur = conn.cursor()
+            cur.execute(sql_query)
+            res = cur.fetchall()
+            print('\n' + res + '\n')
+            #return res
+        else:
+            print('error')
+            return False
+    except Exception as e:
+        print(e)
+        return False

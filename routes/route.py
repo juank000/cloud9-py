@@ -16,3 +16,7 @@ def registerUser():
 @app.route('/consult_page')
 def consultPage():
     return fconsultPage()
+
+@app.route('/consult_user', methods=['post'])
+def consultUser():
+    return fconsultUser()
