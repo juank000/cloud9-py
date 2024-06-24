@@ -1,6 +1,7 @@
 from flask import render_template, request
 from database.db import connectionSQL, add_user, consultUserDB
 #from database.db import *
+from admin.admin_s3 import conn_s3
 
 def fhome():
     #print("Everything's OK")
@@ -23,6 +24,8 @@ def fregisterUser():
     
     #print(type(id))
     #print(res)
+    
+    conn_s3()
     
     if res == True:
         return render_template('register.html')
