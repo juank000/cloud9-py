@@ -13,7 +13,18 @@ def conn_s3():
     try:
         session_aws = boto3.session.Session(ACCESS_KEY, SECRET_KEY)
         s3_resource = session_aws.resource('s3')
-        print('connecting to S3...')
+        print('\nConnected to S3...\n')
     except Exception as e:
         print('Error connecting', e)
-    
+        
+
+def img_save(img):
+    try:
+        img_path = "/tmp/image_test_1.png"
+        img.save(img_path)
+        print("Image saved\n")
+    except Exception as e:
+        print('Error', e)
+        
+def img_upload():
+    print()

@@ -1,7 +1,8 @@
 from flask import render_template, request
 from database.db import connectionSQL, add_user, consultUserDB
 #from database.db import *
-from admin.admin_s3 import conn_s3
+from admin.admin_s3 import conn_s3, img_save
+#from database.db import *
 
 def fhome():
     #print("Everything's OK")
@@ -18,14 +19,18 @@ def fregisterUser():
     name = request.form['name']
     last_name = request.form['last_name']
     birth_date = request.form['birth_date']
+    image = request.files['image']
     
     print(f"\nId: {id}\nName: {name}\nLast name: {last_name}\nDate: {birth_date}\n")
+    print(f"Image name: {image.filename}")
+    
     res = add_user(id, name, last_name, birth_date)
     
     #print(type(id))
     #print(res)
     
     conn_s3()
+    img_save(image)
     
     if res == True:
         return render_template('register.html')
