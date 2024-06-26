@@ -1,7 +1,7 @@
 from flask import render_template, request
 from database.db import connectionSQL, add_user, consultUserDB
 #from database.db import *
-from admin.admin_s3 import conn_s3, img_save
+from admin.admin_s3 import conn_s3, img_save, img_upload
 #from database.db import *
 
 def fhome():
@@ -29,13 +29,23 @@ def fregisterUser():
     #print(type(id))
     #print(res)
     
-    conn_s3()
-    img_save(image)
+    '''
+    connect_s3 = conn_s3()
+    image_path = img_save(image)
+    image_confirm = img_upload(connect_s3, image_path, image, id)
+    '''
     
     if res == True:
-        return render_template('register.html')
+        connect_s3 = conn_s3()
+        image_path = img_save(image)
+        image_confirm = img_upload(connect_s3, image_path, image, id)
+        
+        if image_confirm:
+            return render_template('register.html')
+        else:
+            return "<h2>image was not saved</h2>"
     else:
-        return "User was not created"
+        return "<h2>User was not created</h2>"
     
 def fconsultPage():
     return render_template('consult.html')
