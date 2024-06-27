@@ -32,7 +32,7 @@ def connectionSQL():
     except pymysql.Error as e:
         print(f"Error connecting to MariaDB Platform: {e}")
     # Get Cursor
-    cursor = conn.cursor()
+    cursor = conn.cursor() # commented to test
     
 def add_user(iid, fname, lname, bdate):
    print('\nAdding...\n')

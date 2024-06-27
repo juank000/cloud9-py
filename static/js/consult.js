@@ -36,5 +36,5 @@ const consultUser = _ => {
         //alert(data.status) // status variable in control.py
         alert("Name fetched from the db: " + data.name) // name variable in control.py
     })
-    .catch(err => alert("User not found" + err))
+    .catch(err => alert("Error" + err))
 }

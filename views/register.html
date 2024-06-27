@@ -13,7 +13,7 @@
             <div class="image-container">
                 <img class="image" src="../static/assets/aws2.png" alt="aws image" loading="lazy">
             </div>
-            <form class="form-container" action='/register_user' method='post'>
+            <form class="form-container" action='/register_user' method='post' enctype="multipart/form-data">
                 <div class="form-div">
                     <label class="form-label">Id</label>
                     <input class="form-input" type="number" placeholder="Only numbers allowed" name="id"/>
@@ -29,6 +29,10 @@
                 <div class="form-div">
                     <label class="form-label">Birth date</label>
                     <input class="form-input" type='date' name="birth_date"/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label">Upload Image</label>
+                    <input class="form-input" type='file' placeholder='Upload Image' name="image"/>
                 </div>
                 <div class="form-btn">
                     <button class="btn" type="submit" onClick=registerUser()>Register</button>
