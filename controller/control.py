@@ -68,24 +68,23 @@ def fconsultUser():
         connect_s3 = conn_s3()
         file_confirm = consult_file(connect_s3, id)
         print(file_confirm)
+        
         if file_confirm != None:
-            file_url = f"https://bkt-wtemp.s3.amazonaws.com/upload-test/{file_confirm}"
+            file_url = f"https://bkt-wtemp.s3.amazonaws.com/{file_confirm}"
             print('url: ' + file_url)
-            answ = {
-                'status': 'OK...',
+        else:
+            file_url = ""
+        answ = {
+                'status': 'OK',
                 'name': res[0][1],
                 'image': file_url
             }
-            print(f"\nName obtained from the db: {answ['name']}\n")
-        else:
-            answ = {
-                'status': 'OK...',
-                'name': res[0][1],
-                'image': ""
-            }
+        print(f"\nName obtained: {answ['name']}\n")
     else:
         answ = {
-            'status': 'ERROR...'
+            'status': 'ERROR',
+            'name': 'no db name'
         }
-        print("User not found\n")
+        print("User not found...\n")
+
     return answ

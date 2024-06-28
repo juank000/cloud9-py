@@ -81,12 +81,9 @@ def consult_file(s3conn, iid):
         #bkt_path_list.append(obj.key)
         file_s3_path = obj.key
         file_s3_name = file_s3_path.split('/')[-1].split('-')[0]
-        print(file_s3_name)
-        print(" ")
-    
+        
         if file_s3_name == iid:
-            print(file_s3_name)
-            print('ok')
+            print('OK... file name s3: ', file_s3_name)
             return file_s3_path
 
     return None

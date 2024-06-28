@@ -56,6 +56,10 @@
         filter: drop-shadow(.4rem .4rem 10px rgb(28, 39, 58));
     }
 }
+.image_aws {
+    width: 250px;
+    border-radius: 25px;
+}
 .msg {
     color: rgb(250, 130, 100);
 }
