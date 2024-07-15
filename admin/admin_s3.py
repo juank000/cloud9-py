@@ -1,4 +1,4 @@
-# sudo pip install boto3 // SDK
+# sudo pip install boto3 (SDK)
 
 import boto3
 import os
